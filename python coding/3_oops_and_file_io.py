@@ -1,5 +1,5 @@
 
-#oops
+#oops concepts
 
 # classic method of creating a class -- not a good way
 
@@ -316,7 +316,148 @@ print(my_file.seek(0))
 print(my_file.read())
 
 
+print(my_file.write("\nthis is the second line"))
+
 ## iterating through a file
 
 my_file = open('test1.txt')
 print(my_file.read())
+
+
+# pertaining to the first point above
+
+
+for line in open('test1.txt'):      # spaces between line appears
+    print(line)
+
+
+# string IO  -- in memory file like object
+
+from io import StringIO
+
+# Arbitrary string
+message = "This is  just a normal string"
+
+print(type(message))
+
+# Use the string method to set the file object
+
+f = StringIO(message)
+
+print(type(f))
+
+#  to read a file
+
+print(f.read())
+
+#write to the file
+
+print(f.write('Second line written to the file like object !'))
+
+
+################################################################################
+
+
+## ERRORS AND EXCEPTION HANDLING
+
+## TRY AND EXCEPT BLOCK
+
+try:
+    f = open('tesfile','w')
+    f.write("Test write this")
+
+except IOError:
+    # this will only check for IO Exception and exceute print statement
+    print("Error Could not find or read data")
+
+else:
+    print("Content written sucessfully !!")
+    f.close()
+
+
+
+# if try is executed successfully else block will execute
+# else  except block will execute
+
+### In python if -else for-else try-else exists !!
+
+
+try:
+    f = open('testfile','r')
+    f.write("Test write this")
+except:
+    print("this write has failed")
+
+try:
+    print("this is my new line of code")
+    print(i+1)
+except:
+    print("there is an issue with the above line")
+
+
+
+##if try executes else will execute otherwise only except will execute
+
+
+try:
+    f = open('testfile','w')
+    f.write('Test write this')
+except Exception as e:
+    # this will check for all kind of exception
+    print("Could not find or read data")
+else:
+    print("Content written successfully !!!")
+
+
+
+
+## finally block  -- with try we write finally to execute the finally block even if try does not executes
+
+
+## if there is error in finally block then only it will throw error -- we can  write try except inside finally to handle this
+
+
+try:
+    f = open('testfile','w')
+    f.write('Test write this')
+finally:
+    try:
+        5/0
+    except:
+        print("Always execute finally block !!")
+
+
+def askint():
+    try:
+        val = int(input("Enter an integer :"))
+    except:
+        print("looks like it is not an int !!")
+
+    finally:
+        print("Finally always exceuted")
+        try:
+            print(val)
+        except Exception as e:
+            print(e)
+
+
+### continuously ckeck for erro
+
+def askint():
+    while True:
+        try:
+            val = int(input("please enter an integer : "))
+
+        except:
+            print("looks like you did not enter an integer !!")
+            continue
+        else:
+            print("yep that's an integer !!")
+            break
+        finally:
+            print("finally has been executed")
+
+
+print(askint())
+
+################################################################################
