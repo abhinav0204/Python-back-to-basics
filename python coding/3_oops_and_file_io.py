@@ -283,11 +283,40 @@ print(summer("abra","cadabra"))
 
 # opening the test.txt (if present)
 
-my_file = open('test.txt','w+')
+my_file = open('my_file.txt')
 
 print(my_file)
 
-print(my_file.read())  # read the data of the files
+print(my_file.read())  # read the data of the files (return as stream)
+
+print(my_file.readlines()) # return list of lines in the file (return as list)
 
 
 print(my_file.seek(20)) #seek the location to the start of the file
+
+
+#writing to a file
+
+#w stands for write
+
+my_file = open('test1.txt','w+')
+
+
+# write to the file
+
+my_file.write('this is a new line')
+
+
+#seek to the start of the file
+
+print(my_file.seek(0))
+
+# read the file
+
+print(my_file.read())
+
+
+## iterating through a file
+
+my_file = open('test1.txt')
+print(my_file.read())
