@@ -1,0 +1,129 @@
+git - maintain the diff version of the code
+
+git bash -- it it a terminal that operates like unix
+
+
+
+set git username and email  --
+
+
+git config --global user.name Abhinav
+
+git config --global user.email abhinavsuman0204@gmail.com
+ 
+check variables has been set or not --
+
+git config --global user.name
+
+git config --global user.email
+
+
+run vs code from gitbash --
+
+code .
+
+
+to get a rep we can either use init command or we can do cloning -
+
+1) init - initalise a empty git repo --
+
+git init
+
+2) to view the repo (all the hidden files and folders) --
+
+ls - lart
+
+you can see thee .git folder in result
+
+3)
+
+for update status in git --
+
+get status 
+
+4 status of a file in git --
+
+untracked -  staged -> add file to staged 
+
+unmodified - modified -> edit the file
+
+modified -  staged -> stage the file
+
+staged - unmodified ->  commit the unmodified file
+
+unmodified - untracked -> remove the file
+
+ 
+ first the changes are staged and then commited
+
+
+
+4) add a file to the staging area --
+
+git add index.html
+
+git status -- (file in green)
+
+
+
+5) to start the tracking of file we need to do commit - initial commit
+
+
+open a new vim editor --
+
+type i and write 'initial commit'
+
+
+for quitting the saving the file in vim editor -- 
+
+:wq
+
+git status
+
+-- to add all files to staging area - git add -A
+
+
+6) to commit a git file (without opening the vim editor) --
+
+git commit -m "Added more html files"
+
+
+clear - to clear the screen
+
+7) git checkout -- matches the last commit of your file with working dir
+
+git checkout -f
+
+
+8) git log -- list the code you have committed with changes
+
+
+
+9) git log -p -1 (top 1 commit with changes will be shown)
+
+q to exit
+
+
+10) git diff - compares working tree with staging area
+
+if same -- does not show anything
+
+if diff - show the diff
+
+if we do git add -A (add changes in all files to staging area)
+
+and then we try git diff -> result is nothing ( no change in working dir and staging area)
+
+11) if we want to compare staging area with last commit
+
+git diff - compares working tree with staging area
+
+git diff --staged - comapares last commit with the last staging area
+
+
+12) git rm command - delete the file from staging area and local
+
+git rm -- cached  -- only remove from staging area (but present on hard disk)
+
+
+
